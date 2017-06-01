@@ -4,6 +4,11 @@ body {
     margin: 0px;
 }
 
+a {
+    text-decoration: none;
+}
+
+
 /* Month header */
 .month {
     padding: 70px 25px;
@@ -35,6 +40,8 @@ body {
 .month .next {
     float: right;
     padding-top: 10px;
+    position: relative;
+    right: 10px;
 }
 
 /* Weekdays (Mon-Sun) */
@@ -42,6 +49,7 @@ body {
     margin: 0;
     padding: 10px 0;
     background-color:#ddd;
+    width: 100%;
 }
 
 .weekdays li {
@@ -61,6 +69,7 @@ body {
 .days li {
     list-style-type: none;
     display: inline-block;
+/*    width: 13.6%;*/    
     width: 13.6%;
     text-align: center;
     margin-bottom: 5px;
@@ -73,4 +82,18 @@ body {
     padding: 5px;
     background: #1abc9c;
     color: white !important
+}
+
+.day a:hover {
+    background-color: #bce4dc;
+}
+
+.day a{
+    width: 13.6%;
+    height: 20px;
+}
+
+.week {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
