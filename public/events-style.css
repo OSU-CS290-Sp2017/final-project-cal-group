@@ -1,11 +1,23 @@
 body {
   font-family: helvetica, sans-serif;
+  background-color: #eeeeee;
+}
+
+.header-img{
+  width: 100%;
+  /*clip: rect(0px,60px,100%,0px);*/
+  max-height: 300px;
+  object-fit: cover;
 }
 
 .day-num {
   display: block;
   float: right;
   vertical-align:text-top;
+  /*background-color: rgba(0, 210, 188, 0.27);*/
+  background-color: #eeeeee;
+  padding: 7px;
+  margin: -1px;
 
 }
 
@@ -18,9 +30,8 @@ body {
 .day {
     flex: 1 13.5%;
     padding: 4px;
-    max-width: 127px;
-    width: 124px;
-    max-height: 100px;
+    max-width: 224px;
+    width: 217px;
 
 }
 
@@ -31,14 +42,16 @@ body {
 
 
 table {
-  border: 2px solid black;
+/*  border: 2px solid black;*/
+  width: 100%;
 }
 
 td {
-  border: 1px solid black;
+  border: 1px solid #eeeeee;
   text-overflow: ellipsis;
   overflow: hidden;
   vertical-align: top;
+  background-color: rgba(255, 255, 255, 0.78);
 }
 
 ul {
@@ -58,10 +71,11 @@ li {
 }
 
 .events-list li {
-  background-color: rgba(128, 128, 128, 0.37);
+  /*background-color: rgba(128, 128, 128, 0.37);*/
+  background-color: rgba(0, 210, 188, 0.1);
   padding: 2px;
   margin: 4px;
-  outline: 1px solid black;
+  outline: 1px solid rgb(222, 222, 222);;
   float: left;
   font-size: 14px;
   text-align: left;
@@ -70,5 +84,6 @@ li {
 
 
 .day-names {
-  background-color: red;
+ 	margin: none;
+ 	background-color: rgb(0, 210, 188);
 }

@@ -23,3 +23,7 @@ app.get('/week/:weekNum', function (req, res, next) {
 		day: week
 	});
 });
+
+app.get('/block', function(req, res, next) {
+	
+})
