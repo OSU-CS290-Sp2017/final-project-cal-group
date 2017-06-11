@@ -1,0 +1,74 @@
+body {
+  font-family: helvetica, sans-serif;
+}
+
+.day-num {
+  display: block;
+  float: right;
+  vertical-align:text-top;
+
+}
+
+.cal-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.day {
+    flex: 1 13.5%;
+    padding: 4px;
+    max-width: 127px;
+    width: 124px;
+    max-height: 100px;
+
+}
+
+.day-names {
+  flex: 1 20%;
+  padding: 4px;
+}
+
+
+table {
+  border: 2px solid black;
+}
+
+td {
+  border: 1px solid black;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+li {
+  display: block;
+}
+
+.events-list{
+  position: relative;
+  float: left;
+  text-align: left;
+  right: 40px;
+}
+
+.events-list li {
+  background-color: rgba(128, 128, 128, 0.37);
+  padding: 2px;
+  margin: 4px;
+  outline: 1px solid black;
+  float: left;
+  font-size: 14px;
+  text-align: left;
+}
+
+
+
+.day-names {
+  background-color: red;
+}
