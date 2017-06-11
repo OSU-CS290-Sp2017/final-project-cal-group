@@ -1,12 +1,17 @@
 var fs = require('fs');
 var express = require('express');
 var path = require('path');
-var handlebars = require('handlebars');
+
 var exphbs = require('express-handlebars');
+var handlebars = require('handlebars');
+var monthData = require('./dayData');
+
 var app = express();
 var port = process.env.PORT || 3000;
+app.listen(port);
 
-app.engine('handlebars', exphbs());
+
+app.engine('handlebars', exphbs({defaultLayout: 'cal_events'}));
 app.set('view engine', 'handlebars');
 
 //var twits = fs.readFileSync('./views/partials/twit.handlebars', 'utf8');
@@ -20,6 +25,16 @@ app.get('/', function (req, res, next) {
 
 });
 
+//routing for week number
+//routes to a certain week to print out the events
+app.get('/week/:weekNum', function (req, res, next) {
+	var week = monthData[req.params.weekNum];
+
+	res.render('eventPage', {
+		day: week
+	});
+});
+
 app.get('*', function (req, res) {
   res.status(404);
   res.render('404Page');
@@ -29,7 +44,9 @@ app.listen(port, function () {
   console.log("== Server listening on port", port);
 });
 
-// app.get('/', function(req, res, next) {
+
+
 
 // 	res.render
 // })
+

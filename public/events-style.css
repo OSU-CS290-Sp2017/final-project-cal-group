@@ -1,0 +1,89 @@
+body {
+  font-family: helvetica, sans-serif;
+  background-color: #eeeeee;
+}
+
+.header-img{
+  width: 100%;
+  /*clip: rect(0px,60px,100%,0px);*/
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.day-num {
+  display: block;
+  float: right;
+  vertical-align:text-top;
+  /*background-color: rgba(0, 210, 188, 0.27);*/
+  background-color: #eeeeee;
+  padding: 7px;
+  margin: -1px;
+
+}
+
+.cal-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.day {
+    flex: 1 13.5%;
+    padding: 4px;
+    max-width: 224px;
+    width: 217px;
+
+}
+
+.day-names {
+  flex: 1 20%;
+  padding: 4px;
+}
+
+
+table {
+/*  border: 2px solid black;*/
+  width: 100%;
+}
+
+td {
+  border: 1px solid #eeeeee;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: top;
+  background-color: rgba(255, 255, 255, 0.78);
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+li {
+  display: block;
+}
+
+.events-list{
+  position: relative;
+  float: left;
+  text-align: left;
+  right: 40px;
+}
+
+.events-list li {
+  /*background-color: rgba(128, 128, 128, 0.37);*/
+  background-color: rgba(0, 210, 188, 0.1);
+  padding: 2px;
+  margin: 4px;
+  outline: 1px solid rgb(222, 222, 222);;
+  float: left;
+  font-size: 14px;
+  text-align: left;
+}
+
+
+
+.day-names {
+ 	margin: none;
+ 	background-color: rgb(0, 210, 188);
+}
