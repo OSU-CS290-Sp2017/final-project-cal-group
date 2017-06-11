@@ -8,8 +8,6 @@ var monthData = require('./dayData');
 
 var app = express();
 var port = process.env.PORT || 3000;
-app.listen(port);
-
 
 app.engine('handlebars', exphbs({defaultLayout: 'cal_events'}));
 app.set('view engine', 'handlebars');
@@ -28,7 +26,8 @@ app.get('/', function (req, res, next) {
 //routing for week number
 //routes to a certain week to print out the events
 app.get('/week/:weekNum', function (req, res, next) {
-	var week = monthData[req.params.weekNum];
+	var weekNum = req.params.weekNum - 1;
+	var week = monthData[weekNum];
 
 	res.render('eventPage', {
 		day: week
