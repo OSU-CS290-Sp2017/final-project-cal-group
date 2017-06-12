@@ -1,0 +1,29 @@
+<div id="modal-backdrop" class="hidden"></div>
+
+<div id="add-event-modal" class="hidden">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Add event</h2>
+      <button type="button" class="modal-close">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="event-input">
+        <label for="event-text">Event</label>
+        <textarea id="event-text"></textarea>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Date</button>
+        <select class="dropdown-content">
+          <option value="{{day-num}}">{{day-num}}</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="modal-add-button">Add Event</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="./events.js">
+</script>
