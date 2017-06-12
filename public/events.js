@@ -1,28 +1,78 @@
-var modal = document.getElementById('add-event-modal');
-var inputElement = document.querySelector('.event-input');
-var twitContainer = document.querySelector('.cal-container');
+var addEventButton = document.querySelector('.modal-add-button');
 
-/*shows modal when clicking red button*/
-var redButton = document.getElementById('add-event-button');
+//communicates with the server to store the event
+function storeEvent(weekNum, dayNum, eventInput, callback) {
+	var postURL = '/' + weekNum;
+	console.log("i'm in storeEvent, this is postURL:", postURL);
 
-function hideShowModal() {
-	modal.classList.toggle('hidden');
-	var modalBackground = document.getElementById('modal-backdrop');
-	modalBackground.classList.toggle('hidden');
-  //console.log("I'm in hideShowModal");
+	var postRequest = new XMLHttpRequest();
+	postRequest.open('POST', postURL);
+
+	//sending json content
+	postRequest.setRequestHeader('Content-Type', 'application/json');
+	// postRequest.addEventListener('load', function(event) {
+	// 	console.log(event.target.status);
+	// });
+		//object to send
+		var postBodyEvent = {
+				"events": {"event-name": eventInput},
+				"week-num" : weekNum,
+				"day-num" : dayNum
+
+		};
+
+		//send to server in string form
+		postRequest.send(JSON.stringify(postBodyEvent));
+
+		console.log("jsonstringify:", JSON.stringify(postBodyEvent));
 }
 
-redButton.addEventListener('click', hideShowModal);
 
-var textInput = document.getElementById('event-text');
+/*adds events code*/
+//generate HTML for an event, and add it to the DOM
+function addEvent() {
 
-/*closing the modal*/
-var closeButton = document.querySelector('.modal-close');
+	//get user inputs
+	var eventInput = document.getElementById('event-text').value;
+	var dayNum = document.getElementById('dropdown-content').value;
 
-/*clear input fields*/
-function resetModal() {
-	hideShowModal();
-	textInput.value = "";
+	//get the week number from the URL
+	var pathComponents = window.location.pathname.split('/');
+	var weekNum = pathComponents[1];
+
+	//for debugging
+	console.log("weekNum:", weekNum);
+	console.log("eventInput:", eventInput);
+	console.log("dayNum:", dayNum);
+
+	//append input to dom
+	var dayID = "day-" + dayNum;
+	var dayContainer = document.getElementById(dayID);
+	var eventElement = dayContainer.childNodes[2];
+
+	var eventHTML = "<li>" + eventInput + "</li>";
+
+	eventElement.insertAdjacentHTML('beforeend', eventHTML);
+
+	//communicate with server and append to DOM
+	storeEvent(weekNum, dayNum, eventInput, function(){
+		console.log("i made it to the callback function");
+		var dayID = "day-" + dayNum;
+		var dayContainer = document.getElementById(dayID);
+		var eventElement = dayContainer.lastChild;
+
+		var eventHTML = "<li>" + eventInput + "</li>";
+
+		eventElement.insertAdjacentHTML('beforeend', eventHTML);
+	});
 }
 
-closeButton.addEventListener('click', resetModal);
+
+
+
+
+//wait till DOM is loaded
+window.addEventListener('DOMContentLoaded', function(event) {
+	//hook up to button
+	addEventButton.addEventListener('click', addEvent)
+});

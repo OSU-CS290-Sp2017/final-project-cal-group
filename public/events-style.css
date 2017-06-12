@@ -87,7 +87,7 @@ li {
 }
 
 
-#modal-backdrop {
+/*#modal-backdrop {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -95,9 +95,9 @@ li {
   right: 0;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.85);
-}
+}*/
 
-#add-event-modal {
+/*#add-event-modal {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -105,6 +105,10 @@ li {
   right: 0;
   z-index: 1010;
   overflow: scroll;
+}*/
+
+#add-event-modal {
+  position: relative;
 }
 
 .hidden {
@@ -112,13 +116,11 @@ li {
 }
 
 .modal-dialog {
-  width: auto;
-  max-width: 600px;
-  min-width: 350px;
-  min-height: 300px;
   margin: 40px auto;
   background-color: #fff;
   border-radius: 15px;
+  width: 471px;
+  min-height: 248px;
 }
 
 .modal-header {
@@ -144,4 +146,27 @@ li {
 
 .modal-body {
   padding: 20px;
+}
+
+.modal-add-button {
+  position: relative;
+  top: 10px;
+  float: right;
+}
+
+#event-text {
+  position: relative;
+  left: 10px;
+  display: inline-block;
+  top: 10px;
+}
+
+.dropdown {
+  position: relative;
+  top: 20px;
+}
+
+#dropdown-content {
+  position: relative;
+  left: 16px;
 }
