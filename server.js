@@ -25,7 +25,7 @@ app.get('/', function (req, res, next) {
 
 //routing for week number
 //routes to a certain week to print out the events
-app.get('/week/:weekNum', function (req, res, next) {
+app.get('/:weekNum', function (req, res, next) {
 	var weekNum = req.params.weekNum - 1;
 	var week = monthData[weekNum];
 
@@ -48,4 +48,3 @@ app.listen(port, function () {
 
 // 	res.render
 // })
-
