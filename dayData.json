@@ -6,7 +6,7 @@
 				"day-num" : "(28)",
 				"events" : [
 					{
-						"event-name": "event name"
+						"event-name": "test"
 					}
 				]
 			},
@@ -14,7 +14,7 @@
 				"day-num" : "(29)",
 				"events" : [
 					{
-						"event-name": "event name"
+						"event-name": "practice"
 					}
 				]
 			},
@@ -22,7 +22,7 @@
 				"day-num" : "(30)",
 				"events" : [
 					{
-						"event-name": "event name"
+						"event-name": "Exam 1:30"
 					}
 				]
 			},
@@ -50,7 +50,7 @@
 				"day-num" : "2",
 				"events" :  [
 					{
-					"event-name": "event name test"
+					"event-name": "meeting"
 					}
 				]
 			},
@@ -79,7 +79,7 @@
 				"day-num" : "5",
 				"events" :  [
 					{
-					"event-name": "event name test"
+					"event-name": "sprint around campus twice"
 					}
 				]
 			},
@@ -95,8 +95,11 @@
 				"day-num" : "7",
 				"events" :  [
 					{
-					"event-name": "event name test"
-					}
+					"event-name": "sleep"
+				},
+				{
+				"event-name": "event name 2 test"
+				}
 				]
 			},
 			{
@@ -114,7 +117,7 @@
 				"day-num" : "9",
 				"events" :  [
 					{
-					"event-name": "event name test"
+					"event-name": "watch spongebob"
 					}
 				]
 			},
@@ -122,8 +125,14 @@
 				"day-num" : "10",
 				"events" :  [
 					{
-					"event-name": "event name test"
-					}
+					"event-name": "meeting"
+				},
+					{
+					"event-name": "soccer practice"
+				},
+				{
+				"event-name": "essay due"
+				}
 				]
 			}
 		]
@@ -159,7 +168,7 @@
 				"day-num" : "14",
 				"events" :  [
 					{
-					"event-name": "event name test"
+					"event-name": "physics final"
 					}
 				]
 			},
@@ -183,8 +192,11 @@
 				"day-num" : "17",
 				"events" :  [
 					{
-					"event-name": "event name test"
-					}
+					"event-name": "marathon"
+				},
+				{
+				"event-name": "golf tournament"
+				}
 				]
 			}
 		],
@@ -203,7 +215,7 @@
 				"day-num" : "19",
 				"events" :  [
 					{
-					"event-name": "event name test"
+					"event-name": "do nothing"
 					}
 				]
 			},
@@ -219,7 +231,7 @@
 				"day-num" : "21",
 				"events" :  [
 					{
-					"event-name": "event name test"
+					"event-name": "Pam's birthday"
 					}
 				]
 			},
@@ -243,7 +255,7 @@
 				"day-num" : "24",
 				"events" :  [
 					{
-					"event-name": "event name test"
+					"event-name": "final exam"
 					}
 				]
 			}
@@ -279,7 +291,7 @@
 				"day-num" : "28",
 				"events" :  [
 					{
-					"event-name": "event name test"
+					"event-name": "dog's birthday"
 					}
 				]
 			},
@@ -295,7 +307,7 @@
 				"day-num" : "30",
 				"events" :  [
 					{
-					"event-name": "event name test"
+					"event-name": "flight to italy"
 					}
 				]
 			},
