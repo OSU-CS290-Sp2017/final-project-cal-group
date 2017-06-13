@@ -31,9 +31,18 @@ app.get('/:weekNum', function (req, res, next) {
 	var weekNum = req.params.weekNum - 1;
   if(weekNum >= 0 && weekNum<= 4) {
   	var week = monthData[weekNum];
-
+    var nextWeek;
+    if(weekNum < 4){
+      nextWeek = weekNum + 2;
+    }
+    else if(weekNum == 4) {
+      nextWeek = 1;
+    }
+    else nextWeek = 4;
   	res.render('eventPage', {
-  		day: week
+  		"day": week,
+      "next-url": nextWeek,
+      "current": req.params.weekNum
   	});
     res.status(200);
   }

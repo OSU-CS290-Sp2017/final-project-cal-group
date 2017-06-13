@@ -3,8 +3,6 @@ var addEventButton = document.querySelector('.modal-add-button');
 //communicates with the server to store the event
 function storeEvent(weekNum, dayNum, eventInput, callback) {
 	var postURL = '/' + weekNum;
-	console.log("i'm in storeEvent, this is postURL:", postURL);
-
 	var postRequest = new XMLHttpRequest();
 	postRequest.open('POST', postURL);
 
@@ -24,7 +22,6 @@ function storeEvent(weekNum, dayNum, eventInput, callback) {
 		//send to server in string form
 		postRequest.send(JSON.stringify(postBodyEvent));
 
-		console.log("jsonstringify:", JSON.stringify(postBodyEvent));
 }
 
 
@@ -39,11 +36,6 @@ function addEvent() {
 	//get the week number from the URL
 	var pathComponents = window.location.pathname.split('/');
 	var weekNum = pathComponents[1];
-
-	//for debugging
-	console.log("weekNum:", weekNum);
-	console.log("eventInput:", eventInput);
-	console.log("dayNum:", dayNum);
 
 	//append input to dom
 	var dayID = "day-" + dayNum;
