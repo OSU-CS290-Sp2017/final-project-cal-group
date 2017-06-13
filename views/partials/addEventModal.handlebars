@@ -1,6 +1,10 @@
-<div id="modal-backdrop" class="hidden"></div>
+<!-- <button type="button" id="add-event-button">
+  <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+</button> -->
 
-<div id="add-event-modal" class="hidden">
+<!-- <div id="modal-backdrop" class="hidden"></div> -->
+
+<div id="add-event-modal">
   <div class="modal-dialog">
     <div class="modal-header">
       <h2>Add event</h2>
@@ -13,9 +17,10 @@
         <textarea id="event-text"></textarea>
       </div>
       <div class="dropdown">
-        <button class="dropbtn">Date</button>
-        <select class="dropdown-content">
-          <option value="{{day-num}}">{{day-num}}</option>
+        <label for="dropdown-content">Date</label>
+        <select id="dropdown-content">
+          <option value="1">1</option>
+          <option value="2">2</option>
         </select>
       </div>
       <div class="modal-footer">
@@ -25,5 +30,5 @@
   </div>
 </div>
 
-<script type="text/javascript" src="./events.js">
-</script>
+<!-- <script type="text/javascript" src="./events.js">
+</script> -->

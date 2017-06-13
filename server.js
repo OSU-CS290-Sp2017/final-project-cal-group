@@ -1,6 +1,7 @@
 var fs = require('fs');
 var express = require('express');
 var path = require('path');
+var bodyParser = require('body-parser');
 
 var exphbs = require('express-handlebars');
 var handlebars = require('handlebars');
@@ -26,13 +27,56 @@ app.get('/', function (req, res, next) {
 //routing for week number
 //routes to a certain week to print out the events
 app.get('/:weekNum', function (req, res, next) {
+  //check for errors in week numbers (must be 1-5)
 	var weekNum = req.params.weekNum - 1;
-	var week = monthData[weekNum];
+  if(weekNum >= 0 && weekNum<= 4) {
+  	var week = monthData[weekNum];
 
-	res.render('eventPage', {
-		day: week
-	});
+  	res.render('eventPage', {
+  		day: week
+  	});
+    res.status(200);
+  }
 });
+
+app.use(bodyParser.json());
+
+
+//function to find week numbers
+function findWeekNum(dayNum) {
+  for(var i=0; i<monthData.length; i++) {
+    for(var j=0; j<7; j++) {
+      if(monthData[i][j]["day-num"] === dayNum) {
+        return i;
+      }
+    }
+  }
+}
+
+//function to find the day of the week the date is in
+function findDayName(dayNum, weekNum) {
+  for(var i=0; i<7; i++) {
+    if(monthData[weekNum][i]["day-num"] == dayNum) {
+      return i;
+    }
+  }
+}
+
+//post request
+//should add fs thing?? to add to the json.
+app.post('/:weekNum', function (req, res, next) {
+  console.log("req.body", req.body);
+  var eventToAdd = req.body.events; //object to push to events
+  var dayOfEvent = req.body['day-num'];
+  var weekOfEvent = findWeekNum(dayOfEvent);
+  var numInWeek = findDayName(dayOfEvent, weekOfEvent);
+  console.log("longthing:",monthData[weekOfEvent][numInWeek].events);
+  monthData[weekOfEvent][numInWeek].events.push(eventToAdd);
+  res.status(200).send();
+});
+
+
+
 
 app.get('*', function (req, res) {
   res.status(404);
