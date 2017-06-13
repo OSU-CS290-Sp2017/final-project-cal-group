@@ -56,11 +56,12 @@ function addEvent() {
 		var eventHTML = "<li>" + eventInput + "</li>";
 
 		eventElement.insertAdjacentHTML('beforeend', eventHTML);
+
 	});
+
+	//clear fields
+	document.getElementById('event-text').value = "";
 }
-
-
-
 
 
 //wait till DOM is loaded
