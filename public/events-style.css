@@ -183,3 +183,19 @@ a.next-week-button:hover {
   position: relative;
   bottom: 1px;
 }
+
+.modal-add-button {
+  background-color: rgb(0, 140, 125);
+  border-radius: 15px;
+  color: white;
+  padding: 10px;
+  box-shadow: 4px 4px 12px #eeeeee;;
+  border: 1px solid #eeeeee;
+}
+
+.modal-add-button:hover {
+  background-color: rgb(0, 84, 75);
+  cursor: pointer;
+  box-shadow: 4px 4px 12px #eeeeee;;
+  border: 1px solid #eeeeee;
+}
