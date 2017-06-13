@@ -65,12 +65,10 @@ function findDayName(dayNum, weekNum) {
 //post request
 //should add fs thing?? to add to the json.
 app.post('/:weekNum', function (req, res, next) {
-  console.log("req.body", req.body);
   var eventToAdd = req.body.events; //object to push to events
   var dayOfEvent = req.body['day-num'];
   var weekOfEvent = findWeekNum(dayOfEvent);
   var numInWeek = findDayName(dayOfEvent, weekOfEvent);
-  console.log("longthing:",monthData[weekOfEvent][numInWeek].events);
   monthData[weekOfEvent][numInWeek].events.push(eventToAdd);
   res.status(200).send();
 });
